@@ -14,7 +14,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *postScore;
 @property (nonatomic, strong) IBOutlet UILabel *title;
 @property (nonatomic, strong) IBOutlet UILabel *typeLabel;
-@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRecognizer;
+@property (nonatomic, strong) IBOutlet UILabel *upLabel;
+@property (nonatomic, strong) IBOutlet UILabel *downLabel;
+@property (nonatomic, strong) IBOutlet UILabel *authorLabel;
 
 - (void) setPost: (RKLink *) link;
 

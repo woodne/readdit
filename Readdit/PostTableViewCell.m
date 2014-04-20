@@ -24,8 +24,11 @@
 
 - (void) setPost: (RKLink *) link
 {
-    self.postScore.text = [NSString stringWithFormat:@"%d", [link score]];
-    self.title.text = [link title];
+    self.upLabel.text = [NSString stringWithFormat:@"%d", link.upvotes];
+    self.postScore.text = [NSString stringWithFormat:@"%d", link.score];
+    self.downLabel.text = [NSString stringWithFormat:@"%d", link.downvotes];
+    self.title.text = link.title;
+    self.authorLabel.text = [NSString stringWithFormat:@"/u/%@", link.author];
     
     if (link.isSelfPost) {
         self.typeLabel.text = [NSString stringWithFormat:@"self.%@", link.subreddit];
