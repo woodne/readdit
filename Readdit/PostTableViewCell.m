@@ -24,9 +24,18 @@
 
 - (void) setPost: (RKLink *) link
 {
-    self.upLabel.text = [NSString stringWithFormat:@"%d", link.upvotes];
-    self.postScore.text = [NSString stringWithFormat:@"%d", link.score];
-    self.downLabel.text = [NSString stringWithFormat:@"%d", link.downvotes];
+    self.postScore.text = [NSString stringWithFormat:@"%ld", (long)link.score];
+    // If the user wants to show up and down votes set the labels
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"showUpDown"]) {
+        self.upLabel.hidden = NO;
+        self.downLabel.hidden = NO;
+        self.upLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)link.upvotes];
+        self.downLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)link.downvotes];
+    } else {
+        self.upLabel.hidden = YES;
+        self.downLabel.hidden = YES;
+    }
+    
     self.title.text = link.title;
     self.authorLabel.text = [NSString stringWithFormat:@"/u/%@", link.author];
     

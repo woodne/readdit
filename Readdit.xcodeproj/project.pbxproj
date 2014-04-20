@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C30FCE19EFD494B98C36FCE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DF7F1F5F5453FA6CF99F2 /* libPods.a */; };
+		B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66349781903ECC5006C4170 /* RootTableViewController.m */; };
+		B663497C1903EE5A006C4170 /* SubredditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */; };
 		B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E119033BDF00096B61 /* PostTableViewCell.m */; };
 		B6B976E81903520100096B61 /* ImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E71903520100096B61 /* ImageFetcher.m */; };
 		B6B976EB19035B4000096B61 /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976EA19035B4000096B61 /* ResourceManager.m */; };
@@ -19,7 +21,6 @@
 		B6D27CB4190337FA0006E620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D27CB3190337FA0006E620 /* main.m */; };
 		B6D27CB8190337FA0006E620 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D27CB7190337FA0006E620 /* AppDelegate.m */; };
 		B6D27CBB190337FA0006E620 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D27CB9190337FA0006E620 /* Main_iPhone.storyboard */; };
-		B6D27CBE190337FA0006E620 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D27CBC190337FA0006E620 /* Main_iPad.storyboard */; };
 		B6D27CC1190337FA0006E620 /* Readdit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D27CBF190337FA0006E620 /* Readdit.xcdatamodeld */; };
 		B6D27CC4190337FA0006E620 /* FrontPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D27CC3190337FA0006E620 /* FrontPageViewController.m */; };
 		B6D27CC7190337FA0006E620 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D27CC6190337FA0006E620 /* PostViewController.m */; };
@@ -43,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B66349771903ECC5006C4170 /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		B66349781903ECC5006C4170 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+		B663497A1903EE5A006C4170 /* SubredditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditTableViewCell.h; sourceTree = "<group>"; };
+		B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditTableViewCell.m; sourceTree = "<group>"; };
 		B6B976D8190339CA00096B61 /* libPods-RedditKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RedditKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RedditKit.a"; sourceTree = "<group>"; };
 		B6B976E019033BDF00096B61 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		B6B976E119033BDF00096B61 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		B6D27CB6190337FA0006E620 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6D27CB7190337FA0006E620 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B6D27CBA190337FA0006E620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B6D27CBD190337FA0006E620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B6D27CC0190337FA0006E620 /* Readdit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Readdit.xcdatamodel; sourceTree = "<group>"; };
 		B6D27CC2190337FA0006E620 /* FrontPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrontPageViewController.h; sourceTree = "<group>"; };
 		B6D27CC3190337FA0006E620 /* FrontPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrontPageViewController.m; sourceTree = "<group>"; };
@@ -105,11 +109,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B66349761903ECA4006C4170 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6D27CC2190337FA0006E620 /* FrontPageViewController.h */,
+				B6D27CC3190337FA0006E620 /* FrontPageViewController.m */,
+				B6D27CC5190337FA0006E620 /* PostViewController.h */,
+				B6D27CC6190337FA0006E620 /* PostViewController.m */,
+				B66349771903ECC5006C4170 /* RootTableViewController.h */,
+				B66349781903ECC5006C4170 /* RootTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		B6B976DF19033BAA00096B61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				B6B976E019033BDF00096B61 /* PostTableViewCell.h */,
 				B6B976E119033BDF00096B61 /* PostTableViewCell.m */,
+				B663497A1903EE5A006C4170 /* SubredditTableViewCell.h */,
+				B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -167,11 +186,7 @@
 				B6D27CB6190337FA0006E620 /* AppDelegate.h */,
 				B6D27CB7190337FA0006E620 /* AppDelegate.m */,
 				B6D27CB9190337FA0006E620 /* Main_iPhone.storyboard */,
-				B6D27CBC190337FA0006E620 /* Main_iPad.storyboard */,
-				B6D27CC2190337FA0006E620 /* FrontPageViewController.h */,
-				B6D27CC3190337FA0006E620 /* FrontPageViewController.m */,
-				B6D27CC5190337FA0006E620 /* PostViewController.h */,
-				B6D27CC6190337FA0006E620 /* PostViewController.m */,
+				B66349761903ECA4006C4170 /* Controllers */,
 				B6D27CC8190337FA0006E620 /* Images.xcassets */,
 				B6D27CBF190337FA0006E620 /* Readdit.xcdatamodeld */,
 				B6D27CAE190337FA0006E620 /* Supporting Files */,
@@ -286,7 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6D27CBE190337FA0006E620 /* Main_iPad.storyboard in Resources */,
 				B6D27CC9190337FA0006E620 /* Images.xcassets in Resources */,
 				B6D27CBB190337FA0006E620 /* Main_iPhone.storyboard in Resources */,
 				B6D27CB2190337FA0006E620 /* InfoPlist.strings in Resources */,
@@ -344,10 +358,12 @@
 				B6D27CC7190337FA0006E620 /* PostViewController.m in Sources */,
 				B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */,
 				B6B976E81903520100096B61 /* ImageFetcher.m in Sources */,
+				B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */,
 				B6D27CC4190337FA0006E620 /* FrontPageViewController.m in Sources */,
 				B6D27CC1190337FA0006E620 /* Readdit.xcdatamodeld in Sources */,
 				B6D27CB8190337FA0006E620 /* AppDelegate.m in Sources */,
 				B6D27CB4190337FA0006E620 /* main.m in Sources */,
+				B663497C1903EE5A006C4170 /* SubredditTableViewCell.m in Sources */,
 				B6B976EB19035B4000096B61 /* ResourceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,14 +401,6 @@
 				B6D27CBA190337FA0006E620 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B6D27CBC190337FA0006E620 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6D27CBD190337FA0006E620 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		B6D27CD9190337FA0006E620 /* InfoPlist.strings */ = {
