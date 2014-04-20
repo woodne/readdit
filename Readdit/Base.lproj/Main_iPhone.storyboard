@@ -61,10 +61,8 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="postScore" destination="tcQ-Jr-WdS" id="4MN-m9-CMJ"/>
-                                    <outlet property="swipeRecognizer" destination="Gqp-vz-ZRh" id="dVT-aV-2xv"/>
                                     <outlet property="title" destination="pO1-8K-LHH" id="DVe-6L-HGI"/>
                                     <outlet property="typeLabel" destination="hgX-iK-HSe" id="8Up-yQ-aQX"/>
-                                    <outletCollection property="gestureRecognizers" destination="Gqp-vz-ZRh" appends="YES" id="jW5-o0-E8o"/>
                                     <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>
                             </tableViewCell>
@@ -78,7 +76,6 @@
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="Gqp-vz-ZRh"/>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
@@ -94,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUp-Tn-IE2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUp-Tn-IE2">
                                 <rect key="frame" x="0.0" y="61" width="320" height="300"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>

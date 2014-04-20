@@ -43,6 +43,7 @@
         
         if (detailItem.isImageLink) {
             [ImageFetcher getImageFromURL:detailItem.URL thenPerform:^(UIImage *img) {
+//                [self.postImage sizeThatFits:img.size];
                 self.postImage.image = img;
                 [self.imageSpinner stopAnimating];
             }];
