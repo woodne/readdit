@@ -36,14 +36,11 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
     if (self.detailItem) {
         self.navigationItem.title = detailItem.title;
         
         if (detailItem.isImageLink) {
             [ImageFetcher getImageFromURL:detailItem.URL thenPerform:^(UIImage *img) {
-//                [self.postImage sizeThatFits:img.size];
                 self.postImage.image = img;
                 [self.imageSpinner stopAnimating];
             }];
@@ -53,7 +50,17 @@
             
             self.selfPostLabel.text = detailItem.selfText;
             [self.selfPostLabel sizeToFit];
+        } else {
+            UIWebView *postView = [[UIWebView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:postView];
+            NSURLRequest *req = [NSURLRequest requestWithURL:self.detailItem.URL];
+            [postView loadRequest:req];
         }
+        
+        [[RKClient sharedClient] commentsForLink:self.detailItem completion:^(NSArray *collection, RKPagination *pagination, NSError *error) {
+            RKComment *firstComment = [collection firstObject];
+            NSLog(firstComment.body);
+        }];
     }
 }
 

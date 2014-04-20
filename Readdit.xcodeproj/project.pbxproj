@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C30FCE19EFD494B98C36FCE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DF7F1F5F5453FA6CF99F2 /* libPods.a */; };
+		B640FB1619044C35000F4CC0 /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = B640FB1519044C35000F4CC0 /* Resources.m */; };
+		B640FB1919046283000F4CC0 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640FB1819046283000F4CC0 /* OptionsViewController.m */; };
 		B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66349781903ECC5006C4170 /* RootTableViewController.m */; };
 		B663497C1903EE5A006C4170 /* SubredditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */; };
 		B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E119033BDF00096B61 /* PostTableViewCell.m */; };
 		B6B976E81903520100096B61 /* ImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E71903520100096B61 /* ImageFetcher.m */; };
-		B6B976EB19035B4000096B61 /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976EA19035B4000096B61 /* ResourceManager.m */; };
 		B6D27CA6190337FA0006E620 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D27CA5190337FA0006E620 /* Foundation.framework */; };
 		B6D27CA8190337FA0006E620 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D27CA7190337FA0006E620 /* CoreGraphics.framework */; };
 		B6D27CAA190337FA0006E620 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D27CA9190337FA0006E620 /* UIKit.framework */; };
@@ -44,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B640FB1419044C35000F4CC0 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		B640FB1519044C35000F4CC0 /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
+		B640FB1719046283000F4CC0 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		B640FB1819046283000F4CC0 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 		B66349771903ECC5006C4170 /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
 		B66349781903ECC5006C4170 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		B663497A1903EE5A006C4170 /* SubredditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditTableViewCell.h; sourceTree = "<group>"; };
@@ -53,8 +58,6 @@
 		B6B976E119033BDF00096B61 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		B6B976E61903520100096B61 /* ImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFetcher.h; sourceTree = "<group>"; };
 		B6B976E71903520100096B61 /* ImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFetcher.m; sourceTree = "<group>"; };
-		B6B976E919035B4000096B61 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
-		B6B976EA19035B4000096B61 /* ResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceManager.m; sourceTree = "<group>"; };
 		B6D27CA2190337FA0006E620 /* Readdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D27CA5190337FA0006E620 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6D27CA7190337FA0006E620 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				B6D27CC6190337FA0006E620 /* PostViewController.m */,
 				B66349771903ECC5006C4170 /* RootTableViewController.h */,
 				B66349781903ECC5006C4170 /* RootTableViewController.m */,
+				B640FB1719046283000F4CC0 /* OptionsViewController.h */,
+				B640FB1819046283000F4CC0 /* OptionsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -138,8 +143,8 @@
 			children = (
 				B6B976E61903520100096B61 /* ImageFetcher.h */,
 				B6B976E71903520100096B61 /* ImageFetcher.m */,
-				B6B976E919035B4000096B61 /* ResourceManager.h */,
-				B6B976EA19035B4000096B61 /* ResourceManager.m */,
+				B640FB1419044C35000F4CC0 /* Resources.h */,
+				B640FB1519044C35000F4CC0 /* Resources.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D27CC7190337FA0006E620 /* PostViewController.m in Sources */,
+				B640FB1619044C35000F4CC0 /* Resources.m in Sources */,
 				B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */,
 				B6B976E81903520100096B61 /* ImageFetcher.m in Sources */,
 				B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */,
@@ -364,7 +370,7 @@
 				B6D27CB8190337FA0006E620 /* AppDelegate.m in Sources */,
 				B6D27CB4190337FA0006E620 /* main.m in Sources */,
 				B663497C1903EE5A006C4170 /* SubredditTableViewCell.m in Sources */,
-				B6B976EB19035B4000096B61 /* ResourceManager.m in Sources */,
+				B640FB1919046283000F4CC0 /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

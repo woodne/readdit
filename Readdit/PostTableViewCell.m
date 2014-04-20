@@ -7,6 +7,7 @@
 //
 
 #import "PostTableViewCell.h"
+#import "Resources.h"
 
 @implementation PostTableViewCell
 
@@ -26,7 +27,7 @@
 {
     self.postScore.text = [NSString stringWithFormat:@"%ld", (long)link.score];
     // If the user wants to show up and down votes set the labels
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"showUpDown"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ShowUpDownVotes"]) {
         self.upLabel.hidden = NO;
         self.downLabel.hidden = NO;
         self.upLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)link.upvotes];
@@ -36,7 +37,12 @@
         self.downLabel.hidden = YES;
     }
     
+
+    CGRect labelRect = [PostTableViewCell getRectToFitTitle:link.title];
+    labelRect.origin = self.title.frame.origin;
+    self.title.frame = labelRect;
     self.title.text = link.title;
+    
     self.authorLabel.text = [NSString stringWithFormat:@"/u/%@", link.author];
     
     if (link.isSelfPost) {
@@ -45,5 +51,19 @@
     else if (link.isImageLink) {
         self.typeLabel.text = [NSString stringWithFormat:@"img:%@", link.domain];
     }
+    
+    self.height = [NSNumber numberWithFloat:10 + labelRect.size.height + self.authorLabel.frame.size.height];
+}
+
++ (CGRect) getRectToFitTitle: (NSString *) title
+{
+    NSAttributedString *titleAttrStr = [[NSAttributedString alloc] initWithString:title attributes:[Resources getFontAttributes]];
+    
+    CGSize labelConstraints = CGSizeMake(200, MAXFLOAT);
+    CGRect labelRect = [titleAttrStr boundingRectWithSize:labelConstraints
+                                           options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                           context:nil];
+    
+    return labelRect;
 }
 @end

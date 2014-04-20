@@ -13,15 +13,24 @@
 #import "ImageFetcher.h"
 
 @interface FrontPageViewController ()
-@property (nonatomic) NSArray *posts;
+@property (nonatomic) NSMutableArray *posts;
+@property (nonatomic) NSMutableArray *cellHeights;
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation FrontPageViewController
 
 @synthesize posts;
+@synthesize cellHeights = _cellHeights;
 @synthesize subreddit = _subreddit;
+
+- (NSMutableArray *)getCellHeights
+{
+    if (!_cellHeights) {
+        _cellHeights = [[NSMutableArray alloc] init];
+    }
+    return _cellHeights;
+}
 
 - (void) setSubreddit:(NSString *)subreddit
 {
@@ -38,6 +47,7 @@
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
+    [self.navigationController setToolbarHidden:YES animated:YES];
     [super awakeFromNib];
 }
 
@@ -49,11 +59,19 @@
 
     [self.tableView setEditing:NO];
     
-    [[RKClient sharedClient] frontPageLinksWithPagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
-        posts = links;
-        [self.tableView reloadData];
-    }];
-    
+    if (![self.subreddit isEqualToString:@"frontpage"]) {
+        self.navigationItem.title = _subreddit;
+        [[RKClient sharedClient] linksInSubredditWithName:self.subreddit pagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
+            posts = [NSMutableArray arrayWithArray: links];
+            [self.tableView reloadData];
+        }];
+    } else {
+        self.navigationItem.title = @"Front Page";
+        [[RKClient sharedClient] frontPageLinksWithPagination:nil completion:^(NSArray *links, RKPagination *pagination, NSError *error) {
+            posts = [NSMutableArray arrayWithArray:links];
+            [self.tableView reloadData];
+        }];
+    }
     [ImageFetcher reset];
 }
 
@@ -83,7 +101,16 @@
     }
     
     [cell setPost:[posts objectAtIndex:indexPath.row]];
+    [self.cellHeights insertObject:cell.height atIndex:indexPath.row];
     return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RKLink *link = [posts objectAtIndex:indexPath.row];
+    CGRect rect = [PostTableViewCell getRectToFitTitle:link.title];
+    
+    return rect.size.height + 50;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

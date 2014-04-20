@@ -34,14 +34,25 @@
 {
     [super viewDidLoad];
     
+    [self initDefaults];
+}
+
+- (void) initDefaults
+{
     NSUserDefaults *stdDefaults = [NSUserDefaults standardUserDefaults];
     subreddits = [stdDefaults objectForKey:@"SubscribedSubreddits"];
     
     if (!subreddits) {
         subreddits = @[@"pics", @"aww", @"corgi"];
         [stdDefaults setObject:subreddits forKey:@"SubscribedSubreddits"];
-        [stdDefaults synchronize];
     }
+    
+    if (![stdDefaults objectForKey:@"ShowUpDownVotes"]) {
+        [stdDefaults setBool:NO forKey:@"ShowUpDownVotes"];
+    }
+    
+    [stdDefaults synchronize];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,9 +107,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FrontPageViewController *front = [segue destinationViewController];
-    SubredditTableViewCell *subRedditCell = (SubredditTableViewCell *)sender;
-    front.subreddit = subRedditCell.subreddit;
+    if ([[segue identifier] isEqualToString:@"Options Segue"]) {
+        
+    } else if ([[segue identifier] isEqualToString:@"Front Page Segue"]) {
+        FrontPageViewController *front = [segue destinationViewController];
+        SubredditTableViewCell *subRedditCell = (SubredditTableViewCell *)sender;
+        front.subreddit = subRedditCell.subreddit;
+    }
 }
 
 @end

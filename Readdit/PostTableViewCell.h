@@ -18,6 +18,10 @@
 @property (nonatomic, strong) IBOutlet UILabel *downLabel;
 @property (nonatomic, strong) IBOutlet UILabel *authorLabel;
 
+@property (nonatomic) NSNumber *height;
+
 - (void) setPost: (RKLink *) link;
+
++ (CGRect) getRectToFitTitle: (NSString *)title;
 
 @end
