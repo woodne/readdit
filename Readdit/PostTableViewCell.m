@@ -27,7 +27,7 @@
 {
     self.postScore.text = [NSString stringWithFormat:@"%ld", (long)link.score];
     // If the user wants to show up and down votes set the labels
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ShowUpDownVotes"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUpDownVotes"]) {
         self.upLabel.hidden = NO;
         self.downLabel.hidden = NO;
         self.upLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)link.upvotes];

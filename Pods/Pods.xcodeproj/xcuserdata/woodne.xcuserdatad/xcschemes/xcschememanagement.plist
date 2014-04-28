@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PDKeychainBindingsController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RedditKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>042D873B90064ED1994763FD</key>
+		<key>1FBFE015A0914442B18147B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65A0DA773EF945249BFE0191</key>
+		<key>30C78098D9474D32BD39C551</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF6AEDF494CC4733A30C1304</key>
+		<key>35808CCFA55A449391CEF4FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F1E195E248404CE4A142A3C1</key>
+		<key>8516C4AE1B614BD393EDCA9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F09EB278B5074D19B17861A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

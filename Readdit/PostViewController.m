@@ -58,8 +58,7 @@
         }
         
         [[RKClient sharedClient] commentsForLink:self.detailItem completion:^(NSArray *collection, RKPagination *pagination, NSError *error) {
-            RKComment *firstComment = [collection firstObject];
-            NSLog(firstComment.body);
+//            RKComment *firstComment = [collection firstObject];
         }];
     }
 }

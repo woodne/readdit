@@ -12,6 +12,8 @@
 		B640FB1919046283000F4CC0 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640FB1819046283000F4CC0 /* OptionsViewController.m */; };
 		B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66349781903ECC5006C4170 /* RootTableViewController.m */; };
 		B663497C1903EE5A006C4170 /* SubredditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */; };
+		B6AA6BD0190DE18B00459BA2 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AA6BCF190DE18B00459BA2 /* AccountTableViewCell.m */; };
+		B6AA6BD3190DE6D400459BA2 /* BooleanOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AA6BD2190DE6D400459BA2 /* BooleanOptionTableViewCell.m */; };
 		B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E119033BDF00096B61 /* PostTableViewCell.m */; };
 		B6B976E81903520100096B61 /* ImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B976E71903520100096B61 /* ImageFetcher.m */; };
 		B6D27CA6190337FA0006E620 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D27CA5190337FA0006E620 /* Foundation.framework */; };
@@ -53,6 +55,10 @@
 		B66349781903ECC5006C4170 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		B663497A1903EE5A006C4170 /* SubredditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditTableViewCell.h; sourceTree = "<group>"; };
 		B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditTableViewCell.m; sourceTree = "<group>"; };
+		B6AA6BCE190DE18B00459BA2 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		B6AA6BCF190DE18B00459BA2 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
+		B6AA6BD1190DE6D400459BA2 /* BooleanOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanOptionTableViewCell.h; sourceTree = "<group>"; };
+		B6AA6BD2190DE6D400459BA2 /* BooleanOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanOptionTableViewCell.m; sourceTree = "<group>"; };
 		B6B976D8190339CA00096B61 /* libPods-RedditKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RedditKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RedditKit.a"; sourceTree = "<group>"; };
 		B6B976E019033BDF00096B61 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		B6B976E119033BDF00096B61 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				B6B976E119033BDF00096B61 /* PostTableViewCell.m */,
 				B663497A1903EE5A006C4170 /* SubredditTableViewCell.h */,
 				B663497B1903EE5A006C4170 /* SubredditTableViewCell.m */,
+				B6AA6BCE190DE18B00459BA2 /* AccountTableViewCell.h */,
+				B6AA6BCF190DE18B00459BA2 /* AccountTableViewCell.m */,
+				B6AA6BD1190DE6D400459BA2 /* BooleanOptionTableViewCell.h */,
+				B6AA6BD2190DE6D400459BA2 /* BooleanOptionTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -363,8 +373,10 @@
 				B6D27CC7190337FA0006E620 /* PostViewController.m in Sources */,
 				B640FB1619044C35000F4CC0 /* Resources.m in Sources */,
 				B6B976E319033BDF00096B61 /* PostTableViewCell.m in Sources */,
+				B6AA6BD3190DE6D400459BA2 /* BooleanOptionTableViewCell.m in Sources */,
 				B6B976E81903520100096B61 /* ImageFetcher.m in Sources */,
 				B66349791903ECC5006C4170 /* RootTableViewController.m in Sources */,
+				B6AA6BD0190DE18B00459BA2 /* AccountTableViewCell.m in Sources */,
 				B6D27CC4190337FA0006E620 /* FrontPageViewController.m in Sources */,
 				B6D27CC1190337FA0006E620 /* Readdit.xcdatamodeld in Sources */,
 				B6D27CB8190337FA0006E620 /* AppDelegate.m in Sources */,

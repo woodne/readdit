@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "FrontPageViewController.h"
+#import "PDKeychainBindingsController.h"
+#import "RedditKit.h"
 
 @implementation AppDelegate
 
@@ -18,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    PDKeychainBindings *keychain = [PDKeychainBindings sharedKeychainBindings];
+    NSString *username = [keychain stringForKey:@"username"];
+    NSString *password = [keychain stringForKey:[NSString stringWithFormat:@"password_%@", username]];
+    
+    if (username && password) {
+        [[RKClient sharedClient] signInWithUsername:username password:password completion:^(NSError *error) {
+            NSLog(@"Logged in user: %@", username);
+        }];
+    }
+
     return YES;
 }
 							

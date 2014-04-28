@@ -7,12 +7,19 @@
 //
 
 #import "OptionsViewController.h"
+#import "AccountTableViewCell.h"
+
+#import "PDKeychainBindingsController.h"
 
 @interface OptionsViewController ()
+
+@property (strong) NSDictionary *settings;
 
 @end
 
 @implementation OptionsViewController
+
+@synthesize settings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,14 +33,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self.showUpDownVotes setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"ShowUpDownVotes"]];
+    
+    settings = @{@"ShowUpDownVotes": @"bool",
+                       @"FontSize" : @"numeric",
+                      @"ShowFlair" : @"bool"
+                };
 }
 
 
 - (IBAction) upDownSwitchPressed:(id) sender
 {
-    [[NSUserDefaults standardUserDefaults] setBool:((UISwitch *)sender).isOn forKey:@"ShowUpDownVotes"];
+    BOOL showUpDown = ((UISwitch *) sender).isOn;
+    
+    [[NSUserDefaults standardUserDefaults] setBool:showUpDown forKey:@"ShowUpDownVotes"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -43,6 +55,53 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *title = @"";
+    if (section == 0) {
+        title = @"accounts";
+    } else if (section == 1) {
+        title = @"settings";
+    }
+    return title;
+}
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell"];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"OptionsCell"];
+    }
+    
+    if (!cell) {
+        if (indexPath.section == 0) {
+            cell = [[AccountTableViewCell alloc] init];
+        } else {
+            cell = [[UITableViewCell alloc] init];
+        }
+    }
+    
+    if (indexPath.section == 0) {
+        [(AccountTableViewCell *)cell setUsernameIndex:indexPath.row];
+    }
+    return cell;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return [[[NSUserDefaults standardUserDefaults] arrayForKey:@"usernames"] count] + 1;
+    } else if (section == 1){
+        return self.settings.allKeys.count;
+    }
+    return 0;
+}
 /*
 #pragma mark - Navigation
 
